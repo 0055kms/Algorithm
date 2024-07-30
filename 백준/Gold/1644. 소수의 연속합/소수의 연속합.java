@@ -11,7 +11,7 @@ public class Main {
         boolean[] sosu = new boolean[N+1];
         Arrays.fill(sosu,true);
         sosu[0] = false; sosu[1] = false;
-        for (int i = 2; i<N+1; i++){
+        for (int i = 2; i*i<N+1; i++){
             if (sosu[i]){
                 for (int j = i*2; j<N+1; j+=i){
                     sosu[j] = false;
