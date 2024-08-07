@@ -8,5 +8,5 @@ ar.sort(key = lambda x: (x[1],x[2],x[3]),reverse = True)
 for i in range(len(ar)):
     if ar[i][0] == K: ans = i; ans_tmp = ar[i]; break
 for p in ar:
-    if p == ans_tmp: ans -= 1
-print(ans+1)
+    if p[1:] == ans_tmp[1:]: ans -= 1
+print(ans+2)
