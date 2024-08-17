@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     private static final int[][] dir = {{0,1},{0,-1},{1,0},{-1,0}};
-    private static int[][][] costs; //[r][c][방향] = 최솟값
+    private static int[][][] costs; 
     
     class Node{
         int r,c,d;
