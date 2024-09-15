@@ -1,4 +1,5 @@
 import sys
+sys.setrecursionlimit(10**5)
 input = sys.stdin.readline
 A = [[*map(int,input().rstrip())] for _ in range(9)]
 zeros = []
