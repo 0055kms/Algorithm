@@ -1,10 +1,7 @@
 def solution(line):
     arr = []
-#line 에서 중복안되게 하나씩 순회
-    #교점 구하기
-    #if x,y 둘다정수일경우만 arr 에 추가함
-#arr 사용해서 답 구하기
-    for i in range(len(line)-1):
+
+    for i in range(len(line)):
         for j in range(i+1,len(line)):
             A,B,E = line[i]
             C,D,F = line[j]
