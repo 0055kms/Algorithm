@@ -4,3 +4,5 @@ def solution(citations):
         if i >= citations[i]:
             return i
     return len(citations)
+
+
