@@ -1,23 +1,22 @@
 from collections import deque
+
 def solution(n, edge):
-    ans = 0
-    Visited = [False] * (n+1)
-    D = [0] * (n+1)
-    Elist = [[] for _ in range(n+1)]
+    answer = 0
+    D = [-1] * n
+    D[0] = 0
+    Elist = [[] for _ in range(n)]
     for s,e in edge:
-        Elist[s].append(e)
-        Elist[e].append(s)
+        Elist[s-1].append(e-1)
+        Elist[e-1].append(s-1)
     
-    q = deque([1])
-    Visited[1] = True
+    q = deque([0])
     while q:
-        now = q.popleft()
-        for i in Elist[now]:
-            if not Visited[i]:
-                Visited[i] = True
-                D[i] = D[now] + 1
-                q.append(i)
-    max_val = max(D)
-    for i in D[1:]:
-        if i == max_val: ans += 1
-    return ans
+        cur = q.popleft()
+        for n in Elist[cur]:
+            if D[n] == -1:
+                D[n] = D[cur] + 1
+                q.append(n)
+    m = max(D)
+    for i in D:
+        if i == m: answer += 1
+    return answer
