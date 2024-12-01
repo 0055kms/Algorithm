@@ -5,7 +5,7 @@ def solution(n, costs):
         return parent[a]
     def union(a,b):
         a,b=find(a),find(b)
-        if a != b: parent[b] = a
+        parent[b] = a
     
     costs.sort(key = lambda x: x[2], reverse = True)
     ans = 0
